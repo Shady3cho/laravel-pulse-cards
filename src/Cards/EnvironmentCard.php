@@ -5,10 +5,8 @@ namespace LangtonMwanza\PulseDevops\Cards;
 use Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
-use Livewire\Attributes\Lazy;
 use Livewire\Component;
 
-#[Lazy]
 class EnvironmentCard extends Component
 {
     public int|string $cols = 6;

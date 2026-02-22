@@ -7,10 +7,8 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Schema;
-use Livewire\Attributes\Lazy;
 use Livewire\Component;
 
-#[Lazy]
 class QueueHealthCard extends Component
 {
     public int|string $cols = 2;

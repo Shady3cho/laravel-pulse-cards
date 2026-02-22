@@ -5,10 +5,8 @@ namespace LangtonMwanza\PulseDevops\Cards;
 use Exception;
 use Illuminate\Support\Facades\Gate;
 use LangtonMwanza\PulseDevops\Services\CloudRunService;
-use Livewire\Attributes\Lazy;
 use Livewire\Component;
 
-#[Lazy]
 class CloudRunJobsCard extends Component
 {
     public int|string $cols = 2;

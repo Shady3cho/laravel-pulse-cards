@@ -5,10 +5,8 @@ namespace LangtonMwanza\PulseDevops\Cards;
 use Exception;
 use Illuminate\Support\Facades\Gate;
 use LangtonMwanza\PulseDevops\Services\MigrationService;
-use Livewire\Attributes\Lazy;
 use Livewire\Component;
 
-#[Lazy]
 class MigrationsCard extends Component
 {
     public int|string $cols = 2;
