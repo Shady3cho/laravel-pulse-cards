@@ -38,20 +38,22 @@ class PulseDevopsServiceProvider extends ServiceProvider
             return;
         }
 
-        $this->callAfterResolving('livewire', function () {
-            Livewire::component('pulse-devops.migrations', MigrationsCard::class);
-            Livewire::component('pulse-devops.database-tables', DatabaseTablesCard::class);
-            Livewire::component('pulse-devops.gcp-secrets', GcpSecretsCard::class);
-            Livewire::component('pulse-devops.cloud-run-jobs', CloudRunJobsCard::class);
-            Livewire::component('pulse-devops.queue-health', QueueHealthCard::class);
-            Livewire::component('pulse-devops.environment', EnvironmentCard::class);
-        });
+        Livewire::component('pulse-devops.migrations', MigrationsCard::class);
+        Livewire::component('pulse-devops.database-tables', DatabaseTablesCard::class);
+        Livewire::component('pulse-devops.gcp-secrets', GcpSecretsCard::class);
+        Livewire::component('pulse-devops.cloud-run-jobs', CloudRunJobsCard::class);
+        Livewire::component('pulse-devops.queue-health', QueueHealthCard::class);
+        Livewire::component('pulse-devops.environment', EnvironmentCard::class);
     }
 
     protected function registerGate(): void
     {
         Gate::define('viewPulseDevops', function ($user = null) {
             if (app()->environment('local')) {
+                return true;
+            }
+
+            if ($user && method_exists($user, 'hasRole') && $user->hasRole('super_admin')) {
                 return true;
             }
 
