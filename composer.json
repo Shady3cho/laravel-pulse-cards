@@ -1,0 +1,43 @@
+{
+    "name": "langtonmwanza/pulse-devops",
+    "description": "Laravel Pulse cards for GCP DevOps: migrations, queue health, database inspection, GCP secrets, and Cloud Run job management.",
+    "keywords": ["laravel", "pulse", "gcp", "devops", "cloud-run", "migrations"],
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "laravel/pulse": "^1.0",
+        "google/cloud-secret-manager": "^1.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0 || ^10.0",
+        "pestphp/pest": "^2.0 || ^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LangtonMwanza\\PulseDevops\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LangtonMwanza\\PulseDevops\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LangtonMwanza\\PulseDevops\\PulseDevopsServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
